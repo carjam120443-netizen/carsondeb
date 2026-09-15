@@ -6,6 +6,7 @@ sudo
 bash
 fish
 zsh
+aptitude
 coreutils
 ca-certificates
 curl
