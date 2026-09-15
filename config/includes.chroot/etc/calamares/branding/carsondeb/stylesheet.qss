@@ -1,0 +1,7 @@
+#sidebarApp { background: #111827; color: #f3f4f6; }
+#sidebarApp QLabel { color: #f3f4f6; }
+QWidget { selection-background-color: #f59e0b; selection-color: #111827; }
+QPushButton { border: 1px solid #374151; border-radius: 8px; padding: 6px 14px; background: #1f2937; color: #f3f4f6; }
+QPushButton:hover { background: #374151; }
+QPushButton:pressed { background: #f59e0b; color: #111827; }
+QLineEdit, QComboBox, QListView, QTreeView, QTableView { border: 1px solid #374151; border-radius: 6px; }
