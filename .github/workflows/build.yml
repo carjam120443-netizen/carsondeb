@@ -28,6 +28,16 @@ jobs:
         run: |
           sudo lb clean --purge || true
           sudo sh auto/config
+
+          # Current Debian repositories publish Contents indexes inside each
+          # component (for example .../dists/trixie/main/Contents-amd64.gz),
+          # while the Ubuntu-packaged live-build script still requests the old
+          # .../dists/trixie/Contents-amd64.gz path. Patch that lookup so the
+          # kernel stage can build against current Debian mirrors.
+          sudo sed -i \
+            's#${LB_PARENT_MIRROR_CHROOT}/dists/${LB_PARENT_DISTRIBUTION}/Contents-${LB_ARCHITECTURES}.gz#${LB_PARENT_MIRROR_CHROOT}/dists/${LB_PARENT_DISTRIBUTION}/main/Contents-${LB_ARCHITECTURES}.gz#' \
+            /usr/lib/live/build/chroot_linux-image
+
           sudo sh auto/build
           sudo chown -R "$USER:$USER" .
 
