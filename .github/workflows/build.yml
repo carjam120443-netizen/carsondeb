@@ -27,8 +27,8 @@ jobs:
       - name: Build ISO
         run: |
           sudo lb clean --purge || true
-          sudo ./auto/config
-          sudo ./auto/build
+          sudo sh auto/config
+          sudo sh auto/build
           sudo chown -R "$USER:$USER" .
 
       - name: List build output
