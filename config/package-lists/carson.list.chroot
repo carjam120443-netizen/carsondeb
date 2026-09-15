@@ -1,0 +1,38 @@
+# CarsonDEB base desktop live image
+linux-image-amd64
+live-boot
+live-config
+systemd-sysv
+sudo
+bash
+coreutils
+ca-certificates
+curl
+wget
+git
+nano
+vim-tiny
+htop
+neofetch
+pciutils
+usbutils
+iproute2
+iputils-ping
+network-manager
+openssh-client
+
+# Lightweight desktop
+xfce4
+xfce4-goodies
+lightdm
+lightdm-gtk-greeter
+thunar
+xfce4-terminal
+firefox-esr
+
+# Hardware / firmware support
+firmware-linux-free
+firmware-linux
+firmware-iwlwifi
+firmware-amd-graphics
+firmware-realtek
