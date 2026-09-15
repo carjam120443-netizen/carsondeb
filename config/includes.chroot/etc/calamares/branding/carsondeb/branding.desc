@@ -1,0 +1,14 @@
+componentName: carsondeb
+welcomeStyleCalamares: true
+strings:
+  productName: CarsonDEB
+  shortProductName: CarsonDEB
+  version: "Rolling Trixie"
+  shortVersion: "Trixie"
+  versionedName: "CarsonDEB Rolling Trixie"
+  shortVersionedName: "CarsonDEB"
+  bootloaderEntryName: CarsonDEB
+  productUrl: "https://github.com/carjam120443-netizen/carsondeb"
+images:
+  productLogo: carsondeb.svg
+  productIcon: carsondeb.svg
