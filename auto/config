@@ -2,6 +2,7 @@
 set -e
 
 lb config \
+  --mode debian \
   --distribution trixie \
   --architectures amd64 \
   --binary-images iso-hybrid \
@@ -12,6 +13,7 @@ lb config \
   --mirror-chroot-security "https://security.debian.org/debian-security" \
   --mirror-binary-security "https://security.debian.org/debian-security" \
   --apt-recommends true \
+  --initramfs live-boot \
   --linux-flavours "amd64" \
   --linux-packages "linux-image" \
   --debian-installer live \
