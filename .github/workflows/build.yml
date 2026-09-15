@@ -28,12 +28,32 @@ jobs:
           test -f /usr/share/keyrings/debian-archive-keyring.gpg
           lb --version
 
-      - name: Build ISO
+      - name: Configure and build ISO
         run: |
-          sudo chmod +x auto/config auto/build
           sudo lb clean --purge || true
-          sudo sh auto/config
-          sudo sh auto/build
+          sudo lb config \
+            --mode debian \
+            --distribution trixie \
+            --architectures amd64 \
+            --binary-images iso-hybrid \
+            --archive-areas "main contrib non-free non-free-firmware" \
+            --mirror-bootstrap "https://deb.debian.org/debian" \
+            --mirror-chroot "https://deb.debian.org/debian" \
+            --mirror-binary "https://deb.debian.org/debian" \
+            --security false \
+            --apt-recommends true \
+            --initramfs live-boot \
+            --firmware-chroot false \
+            --linux-flavours "amd64" \
+            --linux-packages "linux-image" \
+            --debian-installer live \
+            --debian-installer-gui true \
+            --bootappend-live "boot=live components" \
+            --memtest none \
+            --iso-application "CarsonDEB" \
+            --iso-publisher "CarsonDEB Project" \
+            --iso-volume "CARSONDEB"
+          sudo lb build
           sudo chown -R "$USER:$USER" .
 
       - name: List build output
