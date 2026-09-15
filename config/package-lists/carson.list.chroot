@@ -4,6 +4,7 @@ live-config
 systemd-sysv
 sudo
 bash
+fish
 coreutils
 ca-certificates
 curl
@@ -18,6 +19,10 @@ iproute2
 iputils-ping
 network-manager
 openssh-client
+
+# Graphical installer stack
+calamares
+calamares-settings-debian
 
 # Lightweight desktop
 xfce4
