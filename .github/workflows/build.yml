@@ -48,6 +48,9 @@ jobs:
             --linux-packages "linux-image" \
             --debian-installer live \
             --debian-installer-gui true \
+            --username "carson" \
+            --user-fullname "CarsonDEB User" \
+            --user-defaultgroups "audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth sudo" \
             --bootappend-live "boot=live components" \
             --memtest none \
             --iso-application "CarsonDEB" \
