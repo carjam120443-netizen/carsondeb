@@ -22,13 +22,15 @@ jobs:
       - name: Install build dependencies and Debian Trixie live-build
         run: |
           sudo apt-get update
-          sudo apt-get install -y debootstrap squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools dosfstools cpio wget
+          sudo apt-get install -y debian-archive-keyring debootstrap squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools dosfstools cpio wget
           wget -q https://deb.debian.org/debian/pool/main/l/live-build/live-build_20250505+deb13u1_all.deb
           sudo apt-get install -y ./live-build_20250505+deb13u1_all.deb
+          test -f /usr/share/keyrings/debian-archive-keyring.gpg
           lb --version
 
       - name: Build ISO
         run: |
+          sudo chmod +x auto/config auto/build
           sudo lb clean --purge || true
           sudo sh auto/config
           sudo sh auto/build
