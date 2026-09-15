@@ -48,7 +48,7 @@ jobs:
             --linux-packages "linux-image" \
             --debian-installer live \
             --debian-installer-gui true \
-            --bootappend-live "boot=live components live-config.username=carson live-config.user-fullname=\"CarsonDEB User\" live-config.user-default-groups=audio,cdrom,dip,floppy,video,plugdev,netdev,powerdev,scanner,bluetooth,sudo" \
+            --bootappend-live "boot=live components" \
             --memtest none \
             --iso-application "CarsonDEB" \
             --iso-publisher "CarsonDEB Project" \
