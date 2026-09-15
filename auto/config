@@ -22,3 +22,7 @@ lb config \
   --iso-application "CarsonDEB" \
   --iso-publisher "CarsonDEB Project" \
   --iso-volume "CARSONDEB"
+
+# Debian's Contents index lives under each archive component, while some
+# live-build versions still look for the old top-level Contents-amd64.gz path.
+# The build workflow patches that legacy lookup before invoking lb build.
