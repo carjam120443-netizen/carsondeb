@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+
+lb config \
+  --distribution trixie \
+  --architectures amd64 \
+  --binary-images iso-hybrid \
+  --archive-areas "main contrib non-free non-free-firmware" \
+  --mirror-bootstrap "https://deb.debian.org/debian" \
+  --mirror-chroot "https://deb.debian.org/debian" \
+  --mirror-binary "https://deb.debian.org/debian" \
+  --mirror-chroot-security "https://security.debian.org/debian-security" \
+  --mirror-binary-security "https://security.debian.org/debian-security" \
+  --apt-recommends true \
+  --debian-installer live \
+  --debian-installer-gui true \
+  --bootappend-live "boot=live components" \
+  --memtest none \
+  --iso-application "CarsonDEB" \
+  --iso-publisher "CarsonDEB Project" \
+  --iso-volume "CARSONDEB"
