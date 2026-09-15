@@ -7,6 +7,7 @@ bash
 fish
 zsh
 aptitude
+fastfetch
 coreutils
 ca-certificates
 curl
@@ -29,6 +30,7 @@ calamares-settings-debian
 # Lightweight desktop
 xfce4
 xfce4-goodies
+xfce4-cpugraph-plugin
 lightdm
 lightdm-gtk-greeter
 thunar
