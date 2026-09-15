@@ -2,7 +2,7 @@
 
 A custom Debian-based Linux distribution project built from the ground up with **Debian Live (`live-build`)**.
 
-CarsonDEB currently targets **Debian 13 (Trixie), amd64**. Debian 13.7 is the current stable point release as of September 12, 2026; the build tracks the `trixie` repositories so newly published package updates are pulled during the build. citeturn0search1turn0search5
+CarsonDEB currently targets **Debian 13 (Trixie), amd64**. Debian 13.7 is the current stable point release as of September 12, 2026; the build tracks the `trixie` repositories so newly published package updates are pulled during the build.
 
 ## 🚧 Project status
 
@@ -43,7 +43,7 @@ deb https://deb.debian.org/debian trixie-updates main contrib non-free non-free-
 deb https://security.debian.org/debian-security trixie-security main contrib non-free non-free-firmware
 ```
 
-These are intentionally kept on official Debian infrastructure rather than mixing random third-party repositories into the base image. Debian documents `trixie` as the current stable release and `forky` as testing. citeturn0search5
+These are intentionally kept on official Debian infrastructure rather than mixing random third-party repositories into the base image.
 
 ## 🔨 Building locally
 
