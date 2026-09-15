@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Install CarsonDEB
+Comment=Install CarsonDEB to your computer
+Exec=pkexec calamares
+Icon=carsondeb
+Terminal=false
+Categories=System;Settings;
+StartupNotify=true
