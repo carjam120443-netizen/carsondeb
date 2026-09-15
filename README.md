@@ -1,4 +1,12 @@
-# 🐧 CarsonDEB
+<p align="center">
+  <img src="assets/branding/carsondeb.svg" alt="CarsonDEB logo" width="180">
+</p>
+
+<h1 align="center">CarsonDEB</h1>
+
+<p align="center">
+  A custom Debian-based Linux distribution built with Debian Live.
+</p>
 
 A custom Debian-based Linux distribution project built from the ground up with **Debian Live (`live-build`)**.
 
