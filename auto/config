@@ -12,6 +12,7 @@ lb config \
   --mirror-chroot-security "https://security.debian.org/debian-security" \
   --mirror-binary-security "https://security.debian.org/debian-security" \
   --apt-recommends true \
+  --linux-packages "linux-image-amd64" \
   --debian-installer live \
   --debian-installer-gui true \
   --bootappend-live "boot=live components" \
