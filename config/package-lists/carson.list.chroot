@@ -8,6 +8,7 @@ fish
 zsh
 aptitude
 fastfetch
+fakeroot
 coreutils
 ca-certificates
 curl
@@ -31,6 +32,7 @@ calamares-settings-debian
 xfce4
 xfce4-goodies
 xfce4-cpugraph-plugin
+xfce4-eyes-plugin
 lightdm
 lightdm-gtk-greeter
 thunar
