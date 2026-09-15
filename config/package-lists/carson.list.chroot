@@ -5,6 +5,7 @@ systemd-sysv
 sudo
 bash
 fish
+zsh
 coreutils
 ca-certificates
 curl
