@@ -16,14 +16,11 @@ command -v calamares >/dev/null 2>&1
 # Validate the desktop launcher points at the installed Calamares binary.
 grep -qx 'Exec=pkexec calamares' /usr/share/applications/carsondeb-installer.desktop
 
-grep -qx 'branding: carsondeb' /etc/calamares/settings.conf
-
-grep -qx 'componentName: carsondeb' /etc/calamares/branding/carsondeb/branding.desc
-
-grep -qx 'productName: CarsonDEB' /etc/calamares/branding/carsondeb/branding.desc
-
-grep -qx 'productLogo: carsondeb.svg' /etc/calamares/branding/carsondeb/branding.desc
-
-grep -qx 'productIcon: carsondeb.svg' /etc/calamares/branding/carsondeb/branding.desc
+# YAML entries may be indented, so allow leading whitespace in these checks.
+grep -Eq '^[[:space:]]*branding:[[:space:]]*carsondeb[[:space:]]*$' /etc/calamares/settings.conf
+grep -Eq '^componentName:[[:space:]]*carsondeb[[:space:]]*$' /etc/calamares/branding/carsondeb/branding.desc
+grep -Eq '^[[:space:]]+productName:[[:space:]]*CarsonDEB[[:space:]]*$' /etc/calamares/branding/carsondeb/branding.desc
+grep -Eq '^[[:space:]]+productLogo:[[:space:]]*carsondeb\.svg[[:space:]]*$' /etc/calamares/branding/carsondeb/branding.desc
+grep -Eq '^[[:space:]]+productIcon:[[:space:]]*carsondeb\.svg[[:space:]]*$' /etc/calamares/branding/carsondeb/branding.desc
 
 printf '%s\n' 'CarsonDEB installer payload checks passed.'
