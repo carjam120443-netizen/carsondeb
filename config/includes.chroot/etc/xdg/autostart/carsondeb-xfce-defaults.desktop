@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=CarsonDEB Xfce Defaults
+Comment=Apply CarsonDEB desktop defaults
+Exec=sh /usr/local/bin/carsondeb-xfce-defaults
+OnlyShowIn=XFCE;
+Terminal=false
+NoDisplay=true
+X-GNOME-Autostart-enabled=true
