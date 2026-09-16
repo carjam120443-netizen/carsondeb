@@ -27,6 +27,8 @@ openssh-client
 # Graphical installer stack
 calamares
 calamares-settings-debian
+pkexec
+polkitd
 
 # Lightweight desktop
 xfce4
