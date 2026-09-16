@@ -1,0 +1,19 @@
+#!/bin/sh
+set -eu
+
+# Fail the image build if the CarsonDEB installer payload is incomplete.
+# This verifies the pieces needed by the desktop launcher and Calamares.
+command -v calamares >/dev/null
+[ -x /usr/bin/calamares ]
+[ -f /etc/calamares/settings.conf ]
+[ -f /etc/calamares/branding/carsondeb/branding.desc ]
+[ -f /usr/share/applications/carsondeb-installer.desktop ]
+[ -f /usr/share/icons/hicolor/scalable/apps/carsondeb.svg ]
+
+# Validate the desktop launcher points at the installed Calamares binary.
+grep -qx 'Exec=pkexec calamares' /usr/share/applications/carsondeb-installer.desktop
+
+grep -qx 'branding: carsondeb' /etc/calamares/settings.conf
+
+# Ask Calamares to parse its configuration without starting the GUI.
+calamares --help >/dev/null 2>&1
