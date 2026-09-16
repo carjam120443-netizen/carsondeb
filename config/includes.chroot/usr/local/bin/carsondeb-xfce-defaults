@@ -1,0 +1,18 @@
+#!/bin/sh
+set -eu
+
+# Apply CarsonDEB's Xfce panel configuration to the current desktop user.
+# This intentionally runs after Xfce starts so the live user's generated
+# xfconf database cannot replace the CarsonDEB panel with Debian's default.
+
+CONFIG=/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+USER_CONFIG="$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml"
+
+if [ -f "$CONFIG" ]; then
+    mkdir -p "$(dirname "$USER_CONFIG")"
+    cp "$CONFIG" "$USER_CONFIG"
+    xfce4-panel -r >/dev/null 2>&1 || true
+fi
+
+# Give the panel a moment to restart before removing this one-shot autostart.
+exit 0
