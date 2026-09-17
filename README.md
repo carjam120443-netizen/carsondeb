@@ -16,6 +16,8 @@ CarsonDEB currently targets **Debian 13 (Trixie), amd64** and tracks the officia
 
 CarsonDEB is an early-stage custom distro, but it now produces a bootable Debian Live ISO through GitHub Actions.
 
+**CarsonDEB has been submitted to [DistroWatch](https://distrowatch.com/) for consideration.**
+
 Current image features:
 
 - Debian 13 Trixie / amd64
