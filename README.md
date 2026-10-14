@@ -1,3 +1,17 @@
+<!-- Retired project notice -->
+> [!WARNING]
+> **Project retired — no longer maintained.**
+>
+> CarsonDEB is an old experiment and has been retired. I will not be updating it, fixing bugs, or publishing new versions. Existing builds, workflows, package lists, and instructions are kept for historical reference and may be outdated or stop working.
+>
+> Want a newer Carson Linux project instead? Check out **[CarsonOS](https://github.com/carjam120443-netizen/carsonOS)**, my Arch-based distro project. If you want a newer working version or a feature inspired by CarsonDEB, please create an issue in CarsonOS and explain what you need.
+
+---
+
+# Historical CarsonDEB documentation
+
+The sections below describe the project as it existed before retirement. Roadmap items are historical and should not be interpreted as promises of future development.
+
 <p align="center">
   <img src="assets/branding/carsondeb.svg" alt="CarsonDEB logo" width="180">
 </p>
@@ -8,17 +22,15 @@
   A custom Debian-based Linux distribution built with Debian Live.
 </p>
 
-A custom Debian-based Linux distribution project built from the ground up with **Debian Live (`live-build`)**.
+CarsonDEB was a custom Debian-based Linux distribution project built with **Debian Live (`live-build`)**. It targeted **Debian 13 (Trixie), amd64** and tracked the official Debian repositories.
 
-CarsonDEB currently targets **Debian 13 (Trixie), amd64** and tracks the official Debian repositories.
+## 🚧 Historical project status
 
-## 🚧 Project status
+CarsonDEB reached the point of producing a bootable Debian Live ISO through GitHub Actions. **Development has ended.** The information below is retained for reference only.
 
-CarsonDEB is an early-stage custom distro, but it now produces a bootable Debian Live ISO through GitHub Actions.
+**CarsonDEB was submitted to [DistroWatch](https://distrowatch.com/) for consideration.**
 
-**CarsonDEB has been submitted to [DistroWatch](https://distrowatch.com/) for consideration.**
-
-Current image features:
+Historical image features:
 
 - Debian 13 Trixie / amd64
 - Debian Live / live-build
@@ -34,7 +46,7 @@ Current image features:
 - Debian security and stable-update repositories
 - GitHub Actions ISO builds
 
-The Calamares configuration is intentionally close to the Debian-provided defaults for now. It is a foundation for future CarsonDEB-specific installer branding and workflow customization.
+The Calamares configuration was intentionally close to Debian-provided defaults at the time.
 
 ## 🌳 Base
 
@@ -51,7 +63,7 @@ Debian 13 (Trixie)
 
 ## 🎨 Branding
 
-CarsonDEB branding is kept in the repository so it can be reused by the ISO, desktop, installer, and future applications.
+CarsonDEB branding was kept in the repository for reuse by the ISO, desktop, installer, and potential applications.
 
 ```text
 assets/
@@ -67,11 +79,11 @@ config/includes.chroot/
     └── carsondeb-installer.desktop
 ```
 
-The SVG versions are intentionally kept as text/vector assets so they can later be converted into PNG, ICO, installer artwork, boot artwork, or other sizes without losing the source logo.
+The SVG versions are text/vector assets that can be converted into other formats without losing the source logo.
 
-## 📦 Official repositories
+## 📦 Historical repository configuration
 
-CarsonDEB uses Debian's official mirrors:
+CarsonDEB used Debian's official mirrors:
 
 ```text
 deb https://deb.debian.org/debian trixie main contrib non-free non-free-firmware
@@ -79,77 +91,54 @@ deb https://deb.debian.org/debian trixie-updates main contrib non-free non-free-
 deb https://security.debian.org/debian-security trixie-security main contrib non-free non-free-firmware
 ```
 
-These are intentionally kept on official Debian infrastructure rather than mixing random third-party repositories into the base image.
+These entries are shown as historical documentation and may no longer be suitable for a current build.
 
-## 🧰 Future CarsonDEB Apps
+## 🧰 Planned apps (never completed)
 
-The `apps/` directory is reserved for a future CarsonDEB application catalog/fetch system.
+The `apps/` directory was reserved for a possible CarsonDEB application catalog/fetch system. Ideas included application metadata, categories, package information, graphical discovery, and optional app bundles. These plans are not active.
 
-Possible future components include:
+## 🔨 Historical local build notes
 
-- application metadata
-- categories
-- package/repository information
-- curated CarsonDEB applications
-- graphical app discovery
-- optional app bundles and editions
-
-For now, the base system continues to use Debian's official repositories.
-
-## 🔨 Building locally
-
-A Debian-based build environment is recommended.
-
-Install the build tools:
+A Debian-based build environment was recommended. The original tool list was:
 
 ```bash
 sudo apt update
 sudo apt install live-build debootstrap squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools dosfstools
 ```
 
-Then run the live-build configuration directly from the repository using the same options as the GitHub Actions workflow. The generated ISO appears in the repository directory.
+Build instructions may be incomplete or outdated and are not maintained.
 
-## 🤖 GitHub Actions
+## 🤖 Historical GitHub Actions
 
-Every push to `main`, pull request targeting `main`, or manual workflow run builds the ISO in GitHub Actions.
-
-The workflow uploads the resulting ISO as a workflow artifact named:
+The workflow was configured to build an ISO on pushes to `main`, pull requests targeting `main`, or manual runs. The resulting artifact was named:
 
 ```text
 carsondeb-amd64-iso
 ```
 
+Workflow behavior is not guaranteed.
+
 ## 📁 Repository layout
 
 ```text
 carsondeb/
-├── .github/
-│   └── workflows/
-│       └── build.yml
-├── apps/
-│   └── README.md
-├── assets/
-│   └── branding/
-│       └── carsondeb.svg
+├── .github/workflows/build.yml
+├── apps/README.md
+├── assets/branding/carsondeb.svg
 ├── config/
 │   ├── includes.chroot/
-│   │   ├── etc/apt/sources.list.d/
-│   │   │   └── carsondeb.sources
+│   │   ├── etc/apt/sources.list.d/carsondeb.sources
 │   │   └── usr/share/
-│   │       ├── applications/
-│   │       │   └── carsondeb-installer.desktop
-│   │       ├── icons/hicolor/scalable/apps/
-│   │       │   └── carsondeb.svg
-│   │       └── pixmaps/
-│   │           └── carsondeb.svg
-│   └── package-lists/
-│       └── carson.list.chroot
+│   │       ├── applications/carsondeb-installer.desktop
+│   │       ├── icons/hicolor/scalable/apps/carsondeb.svg
+│   │       └── pixmaps/carsondeb.svg
+│   └── package-lists/carson.list.chroot
 └── README.md
 ```
 
-## 🧩 Customization roadmap
+## 🧩 Historical customization roadmap
 
-Planned areas for CarsonDEB include:
+These checkboxes reflect old project notes only and are not a current development roadmap.
 
 - [x] Initial CarsonDEB branding and artwork
 - [x] Fish as the default interactive shell
@@ -164,8 +153,12 @@ Planned areas for CarsonDEB include:
 - [ ] ISO checksums and release publishing
 - [ ] Additional architectures
 
-## 🛠️ Philosophy
+## 🛠️ Historical philosophy
 
-CarsonDEB starts with a real Debian base instead of trying to reinvent the entire operating system immediately. The goal is to gradually replace and customize components while keeping the underlying system maintainable and compatible with Debian.
+CarsonDEB started with a real Debian base rather than trying to reinvent an entire operating system immediately.
 
 **Build it. Break it. Fix it. Ship it. 🐧**
+
+---
+
+For a newer Carson Linux project, visit **[CarsonOS](https://github.com/carjam120443-netizen/carsonOS)**. To request a feature inspired by CarsonDEB, create an issue in that repository.
